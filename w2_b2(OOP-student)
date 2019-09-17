@@ -1,0 +1,19 @@
+<?php
+/**
+ * 
+ */
+class Student extends User
+{
+	public function __destruct()
+    {
+    	echo "Class con bi huy";
+    }
+
+	public function getStudentInfo()
+	{
+		echo "MS cua student la: ";
+		parent::getUsername();
+
+		echo "Thuoc tinh user la: " . $this->username; 
+	}
+}
