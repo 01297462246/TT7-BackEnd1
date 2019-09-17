@@ -1,0 +1,15 @@
+<?php
+spl_autoload_register(function ($class_name) {
+	require './app/models/' . $class_name . '.php';
+});
+
+$user = new User("abcdef", "123", "Nguyen Van", "A");
+echo $user;
+//Cau 2.2
+echo "<p>";
+echo $user->getFullname();
+echo $user->getUsername();
+echo "</p>";
+
+$student = new Student("555", "123", "llll Van", "A");
+$student->getStudentInfo();
