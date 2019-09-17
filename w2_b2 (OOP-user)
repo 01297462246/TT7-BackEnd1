@@ -1,0 +1,36 @@
+<?php
+class User
+{
+    public $username;
+	public $password;
+	public $firstName;
+	public $lastName;
+
+    public function __construct($username, $password, $firstName, $lastName)
+    {
+    	$this->username = $username;
+    	$this->password = password_hash($password, PASSWORD_DEFAULT);
+    	$this->firstName = $firstName;
+    	$this->lastName = $lastName;
+    	//echo __CLASS__ . " is created.";
+    }
+
+
+	public function __destruct()
+    {
+    	echo __CLASS__ . " is destroyed.";
+    }
+
+	public function __toString()
+    {
+    	return "<br>Day la mot chuoi user.<br>";
+    }
+
+    public function getFullname() {
+    	return $this->firstName . ' ' . $this->lastName;
+    }
+    public function getUsername()
+    {
+        return $this->username;
+    }
+}
